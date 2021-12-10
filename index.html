@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatBot</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/solar/bootstrap.min.css"
+        integrity="sha384-NCwXci5f5ZqlDw+m7FwZSAwboa0svoPPylIW3Nf+GBDsyVum+yArYnaFLE9UDzLd" crossorigin="anonymous">
+    <link rel="stylesheet" href="adminlte.css">
+</head>
+
+<body class="body">
+    <div class="" style="text-align: center;">
+        <b>
+            <h1>Reto chatbot</h1>
+        </b>
+        
+    </div>
+    <br>
+    <br>
+
+    <!-- maquetando el chat-->
+    <div class="container p-12">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <h1>Seleccione el paciente, médico y fecha</h1>
+                            <button class="btn " id="btn-task-form"><img
+                                    src="https://img.icons8.com/office/16/000000/refresh--v2.png" /></button>
+                        </div>
+                        <div class="row">
+                            <h5>Nombre paciente </h5>
+                            <select name="NamePatient" id="NamePatient">
+
+                            </select>
+                        </div>
+                        <br>
+                        <div class="row" >
+                            <h5>Medicos</h5>
+                            <select name="NameDoctor" id="NameDoctor" >
+                            </select>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <h5>Fechas disponibles</h5>
+                            <select name="OS" id="FechasMedico">
+                                
+                            </select>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary" id="btn-task-form" onclick="asignarCita()">Asignar</button>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                
+                <!-- DIRECT CHAT -->
+                <div class="card direct-chat direct-chat-primary" style="height: 80vh">
+                    <div class="card-header">
+                        <h3 class="card-title">Direct Chat</h3>
+
+                        <div class="card-tools">
+                            <span title="3 New Messages" class="badge badge-primary">3</span>
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" title="Contacts" data-widget="chat-pane-toggle">
+                                <i class="fas fa-comments"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <!-- Conversations are loaded here -->
+                        <div class="direct-chat-messages" style="height: 60vh">
+
+
+                        </div>
+                        <!--/.direct-chat-messages-->
+
+
+                        <!-- /.direct-chat-pane -->
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        <form action="" id="task-form2">
+                            <div class="input-group">
+                                <input type="text" name="message" id="message" placeholder="Type Message ..."
+                                    class="form-control">
+                                <span class="input-group-append">
+                                    <button class="btn btn-primary" id="btn-task-form2">Send</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.card-footer-->
+                </div>
+                <!--/.direct-chat -->
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- fin de maquetacion del chat -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script>
+        // Import the functions you need from the SDKs you need
+        //import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Import the functions you need from the SDKs you need
+
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBP_8MdHqp3MVnigup70ug-coOYEnpkwm0",
+            authDomain: "chatbot-97260.firebaseapp.com",
+            projectId: "chatbot-97260",
+            storageBucket: "chatbot-97260.appspot.com",
+            messagingSenderId: "1095616855200",
+            appId: "1:1095616855200:web:73c92e6c245010a4faddc5",
+            measurementId: "G-BP8B5CPNCH"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="index.js"></script>
+</body>
+
+</html>
